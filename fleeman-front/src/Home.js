@@ -16,23 +16,22 @@ const Home = () => {
           mouseControls: true,
           touchControls: true,
           gyroControls: false,
-          minHeight: 600.0,
-          minWidth: 600.0,
+          minHeight: 200.0,
+          minWidth: 200.0,
           scale: 1.0,
           scaleMobile: 1.0,
           backgroundColor: 0x050505,
-          color1: 0x2583fd, // BMW Blue
+          color1: 0x2583fd,
           color2: 0xffffff,
-          birdSize: 1.0, // Slightly smaller birds for more elegance
+          birdSize: 1.0,
           speedLimit: 5.0,
-          separation: 30.0, // Closer together
+          separation: 30.0,
           alignment: 50.0,
           cohesion: 50.0,
-          quantity: 3.5, // SIGNIFICANTLY MORE BIRDS
+          quantity: window.innerWidth < 768 ? 2.0 : 3.5, // Fewer birds on mobile for performance
         })
       );
     }
-
     return () => {
       if (vantaEffect) vantaEffect.destroy();
     };
@@ -48,7 +47,6 @@ const Home = () => {
         </h1>
         <p className="hero-sub-brand">PERFORMANCE CARS</p>
       </div>
-
 
       {/* CTA Overlay Card */}
       <div className="glass-card-container">
@@ -75,7 +73,7 @@ const Home = () => {
 
       {/* BOTTOM DECORATION */}
       <div className="footer-line">
-        <span>© 2026 DRIFT DRIVE PERFORMANCE</span>
+        <span>© 2026 DRIFT DRIVE</span>
         <div className="line"></div>
         <span>SHEER DRIVING PLEASURE</span>
       </div>
