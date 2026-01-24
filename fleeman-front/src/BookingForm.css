@@ -49,19 +49,21 @@ body, html {
 }
 
 /* Background Car Image (Responsive) */
+/* Background Car Image (Responsive) */
 .booking-bg-car {
     position: fixed;
-    top: 50%;
-    right: -10%;
-    width: 50%;
-    height: 300px;
-    background: url('../public/car.jpeg') no-repeat center center;
-    background-size: contain;
-    opacity: 0.1;
-    transform: translateY(-50%);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('../public/Images/bmw3.png') no-repeat center center;
+    background-size: cover;   /* ✅ FULL SCREEN COVER */
+    opacity: 0.6;
+    transform: none;
     z-index: 0;
     pointer-events: none;
 }
+
 
 .booking-container {
     position: relative;
