@@ -133,7 +133,7 @@ function Footer() {
               </Col>
               <Col xs={12} md={4} className="text-center text-md-start">
                 <h6 className="link-title">SUPPORT</h6>
-                <p className="small text-muted mb-2">Need assistance?</p>
+                <p className="small text-white-50 mb-2">Need assistance?</p>
                 <Link to="/CustomerCare" className="contact-btn-small">CONTACT US</Link>
               </Col>
             </Row>

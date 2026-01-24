@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
+
+.about-page-wrapper {
+    background-color: #050505;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Hero Styles */
+.about-hero {
+    height: 80vh;
+  background: linear-gradient(rgba(8, 8, 8, 0.6), rgba(21, 21, 21, 0.9)), 
+            url('../../public/Images/bmw1.png');
+
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.m-performance-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, #0078ad 33%, #002c5f 33% 66%, #e10600 66%);
+}
+
+.italic-brand {
+    font-style: italic;
+    font-weight: 900;
+    letter-spacing: -4px;
+}
+
+.text-blue { color: #2583fd; }
+
+.hero-badge {
+    display: inline-block;
+    border: 1px solid #2583fd;
+    padding: 5px 20px;
+    font-size: 12px;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.story-title {
+    background: #2583fd;
+    color: white;
+    display: inline-block;
+    padding: 10px 40px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+/* Typography & Layout */
+.section-accent-title {
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: #2583fd;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.lead-text {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.8);
+}
+
+.text-muted-white {
+    color: rgba(255,255,255,0.6);
+    line-height: 1.8;
+}
+
+/* History Placeholder */
+.history-image-placeholder {
+    height: 400px;
+    
+    background: url(../../public/Images/bmw.jpg);
+    border: 1px solid rgba(255,255,255,0.1);
+    position: relative;
+}
+
+.inner-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 1px;
+    background: #2583fd;
+    box-shadow: 0 0 50px #2583fd;
+}
+
+/* Leader Cards */
+.leader-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 40px;
+    transition: 0.4s;
+}
+
+.leader-card:hover {
+    background: rgba(37, 131, 253, 0.05);
+    border-color: #2583fd;
+}
+
+.role-tag {
+    font-size: 10px;
+    font-weight: 900;
+    color: #2583fd;
+    letter-spacing: 2px;
+}
+
+.leader-card h4 {
+    margin-top: 10px;
+    font-weight: 800;
+}
+
+/* Contact Glass Card */
+.contact-glass-card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 4px;
+    border-left: 4px solid #e10600; /* M-Performance Red */
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-list li {
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+}
+
+.contact-list i {
+    color: #2583fd;
+    margin-right: 15px;
+    width: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .italic-brand { font-size: 60px; }
+    .story-title { font-size: 20px; }
+}
