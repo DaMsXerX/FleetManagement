@@ -1,133 +1,193 @@
-/* .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
-
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
 
 body {
   margin: 0;
   padding: 0;
-  background-color: #0a0a0a;
+  background-color: #050505;
   font-family: 'Inter', sans-serif;
   overflow: hidden;
+  color: white;
 }
 
-.glass-card {
-  animation: slideUp 1s ease-out;
+.home-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* HERO TEXT IMPROVEMENTS */
+.hero-text-container {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  z-index: 1;
+  pointer-events: none;
+  perspective: 1200px;
 }
 
-/* Custom Scrollbar if needed */
-::-webkit-scrollbar {
-  width: 5px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #2583fd;
-  border-radius: 10px;
-}
-
-/* Styling for the Hero Car Entrance */
-.hero-car {
-  animation: carEntrance 1.8s ease-out forwards, float 4s ease-in-out infinite 1.8s;
-  transition: transform 0.5s ease;
-}
-
-.hero-car:hover {
-  transform: scale(1.03) translateY(-10px) rotate(-1deg);
-}
-
-/* Entrance: Car drives in from the right */
-@keyframes carEntrance {
-  0% {
-    opacity: 0;
-    transform: translateX(200px) scale(0.8);
-    filter: blur(10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-    filter: blur(0);
-  }
-}
-
-/* Idle: Gentle floating animation */
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
-}
-
-/* Text Fade-in */
 .hero-text {
+  font-size: clamp(80px, 18vw, 250px);
+  line-height: 0.8;
+  margin: 0;
+  font-style: italic;
+  font-weight: 900;
+  letter-spacing: -8px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.01) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  transform: rotateX(15deg) skew(-5deg);
   animation: fadeInDown 1.5s ease-out;
 }
 
-@keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-50px) rotateX(10deg); }
-  to { opacity: 1; transform: translateY(0) rotateX(10deg); }
+.hero-sub-brand {
+  letter-spacing: 12px;
+  font-size: 14px;
+  font-weight: 300;
+  color: #2583fd;
+  margin-top: 20px;
+  opacity: 0.8;
 }
 
-/* Explore Button Hover */
-.explore-btn:hover {
-  background-color: #ffffff !important;
-  color: #2583fd !important;
-  box-shadow: 0 10px 20px rgba(37, 131, 253, 0.3);
-  transform: scale(1.05);
+/* LEFT SIDE STATS */
+.side-stats {
+  position: absolute;
+  left: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  border-left: 1px solid rgba(255,255,255,0.1);
+  padding-left: 20px;
 }
 
-/* Glass Card Entrance */
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: 900;
+  color: white;
+}
+
+.stat-label {
+  font-size: 10px;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 2px;
+}
+
+/* GLASS CARD REFINEMENT */
+.glass-card-container {
+  position: absolute;
+  bottom: 8%;
+  z-index: 3;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .glass-card {
-  animation: fadeInUp 1.2s ease-out backwards 0.5s;
+  background: rgba(10, 10, 10, 0.4);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 20px 40px;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+  animation: slideUp 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
+.card-content {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.brand-accent {
+  display: flex;
+  height: 40px;
+  width: 6px;
+  flex-direction: column;
+}
+
+.m-stripe { flex: 1; width: 100%; }
+.m-stripe.blue { background: #0078ad; }
+.m-stripe.dark-blue { background: #002c5f; }
+.m-stripe.red { background: #e10600; }
+
+.category-tag {
+  color: #2583fd;
+  margin: 0;
+  font-weight: 800;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.cta-headline {
+  color: #fff;
+  margin: 0;
+  font-size: 24px;
+  font-weight: 200;
+}
+
+.bold { font-weight: 800; }
+
+.explore-btn {
+  background: #2583fd;
+  color: white;
+  border: none;
+  padding: 16px 45px;
+  border-radius: 5px; /* Square edges look more premium/German */
+  font-weight: 900;
+  font-size: 13px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.explore-btn:hover {
+  background-color: white;
+  color: black;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+/* FOOTER DECOR */
+.footer-line {
+  position: absolute;
+  bottom: 30px;
+  width: calc(100% - 120px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,0.2);
+}
+
+.line {
+  flex-grow: 1;
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+  margin: 0 30px;
+}
+
+/* ANIMATIONS */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(60px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-40px) rotateX(15deg); }
+  to { opacity: 1; transform: translateY(0) rotateX(15deg); }
 }
