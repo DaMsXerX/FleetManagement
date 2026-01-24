@@ -30,6 +30,7 @@ import ReturnLogic from './ReturnLogic';
 import PDFGenerator from './PDFGenerator';
 
 import Addon from './Addon';
+import Home from './Home';
 
 const App = () => {
     return (
@@ -44,7 +45,8 @@ const App = () => {
           <Route path="/StaffPage" element={<StaffPage/>} />
           <Route path="/BookingByStaff" element={<BookingByStaff/>} />
           <Route path="/AboutUs" element={<AboutUs/>} />
-          {/* <Route path="/BookingFormRitik" element={<BookingFormRitik/>} /> */}
+          <Route path="/home" element={<Home/>} />
+         
           <Route path="/Modify" element={<Modify/>} />
           <Route path="/ReturnLogic" element={<ReturnLogic/>} />
           <Route path ="/Car" element={<Car/>} />

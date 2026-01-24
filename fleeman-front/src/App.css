@@ -36,3 +36,98 @@
     transform: rotate(360deg);
   }
 } */
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0a0a0a;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+}
+
+.glass-card {
+  animation: slideUp 1s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom Scrollbar if needed */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2583fd;
+  border-radius: 10px;
+}
+
+/* Styling for the Hero Car Entrance */
+.hero-car {
+  animation: carEntrance 1.8s ease-out forwards, float 4s ease-in-out infinite 1.8s;
+  transition: transform 0.5s ease;
+}
+
+.hero-car:hover {
+  transform: scale(1.03) translateY(-10px) rotate(-1deg);
+}
+
+/* Entrance: Car drives in from the right */
+@keyframes carEntrance {
+  0% {
+    opacity: 0;
+    transform: translateX(200px) scale(0.8);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+/* Idle: Gentle floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* Text Fade-in */
+.hero-text {
+  animation: fadeInDown 1.5s ease-out;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-50px) rotateX(10deg); }
+  to { opacity: 1; transform: translateY(0) rotateX(10deg); }
+}
+
+/* Explore Button Hover */
+.explore-btn:hover {
+  background-color: #ffffff !important;
+  color: #2583fd !important;
+  box-shadow: 0 10px 20px rgba(37, 131, 253, 0.3);
+  transform: scale(1.05);
+}
+
+/* Glass Card Entrance */
+.glass-card {
+  animation: fadeInUp 1.2s ease-out backwards 0.5s;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
