@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
+
+.login-page-wrapper {
+    min-height: 100vh;
+    background: url('https://wallpapercave.com/wp/wp7969229.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: 'Inter', sans-serif;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 1000px;
+    height: 600px;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+/* Side Image Styles */
+.login-side-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.login-image-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.8), transparent);
+    z-index: 1;
+}
+
+.brand-floating-text {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 2;
+}
+
+.brand-floating-text p {
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: rgba(255,255,255,0.6);
+}
+
+/* Form Side Styles */
+.login-form-side {
+    padding: 60px;
+    position: relative;
+    background: #0a0a0a;
+}
+
+.m-performance-header {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 6px;
+    background: linear-gradient(90deg, #0078ad 33%, #002c5f 33% 66%, #e10600 66%);
+}
+
+.italic-brand {
+    font-style: italic;
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+
+.text-blue { color: #2583fd; }
+
+.blue-divider {
+    width: 50px;
+    height: 3px;
+    background: #2583fd;
+    margin-top: 10px;
+}
+
+/* Form Components */
+.form-label-custom {
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #2583fd;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.premium-input {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 0 !important;
+    color: white !important;
+    padding: 12px 15px !important;
+    font-size: 14px !important;
+}
+
+.premium-input:focus {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: #2583fd !important;
+    box-shadow: 0 0 15px rgba(37, 131, 253, 0.2) !important;
+}
+
+.btn-bmw-blue {
+    background: #2583fd !important;
+    border: none !important;
+    border-radius: 0 !important;
+    color: white !important;
+    transition: 0.3s !important;
+}
+
+.btn-bmw-blue:hover {
+    background: white !important;
+    color: black !important;
+    transform: translateY(-2px);
+}
+
+.letter-spacing-2 { letter-spacing: 2px; }
+
+.form-footer {
+    position: absolute;
+    bottom: 20px;
+    left: 60px;
+    color: rgba(255,255,255,0.2);
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .login-container {
+        height: auto;
+        max-width: 450px;
+    }
+    .login-form-side {
+        padding: 40px 25px;
+    }
+    .form-footer {
+        position: relative;
+        left: 0;
+        margin-top: 30px;
+        text-align: center;
+    }
+}
