@@ -1,114 +1,94 @@
 import React, { useState } from 'react';
-import { useHistory, useNavigate } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { useNavigate } from 'react-router-dom';
+import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import './StaffLogin.css';
 
-import staffpage from './StaffPage';
 const StaffLogin = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
-  const handleLogin = () => {
-
+  const handleLogin = (e) => {
+    e.preventDefault();
     const validUsername = 'admin';
     const validPassword = '123';
 
     if (username === validUsername && password === validPassword) {
-
       navigate('/staffpage');
     } else {
-      setError('Invalid username or password');
+      setError('ACCESS DENIED: Invalid Administrative Credentials');
     }
   };
 
   return (
-    <div
-      style={{
-        position: 'relative',
-        minHeight: '100vh', // Ensure the background covers the entire viewport
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        overflow: 'hidden',
-      }}
-    >
-      {/* Background Image */}
+    <div className="staff-wrapper">
+      {/* Background with darker overlay for professional feel */}
+      <div className="staff-bg-overlay"></div>
       <img
-        src="https://images.unsplash.com/photo-1471479917193-f00955256257?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        src="fleeman-front\public\Images\bmw.jpg"
         alt="Background"
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          filter: 'blur(2px)', // Apply blur filter to the background image
-        }}
+        className="staff-bg-img"
       />
 
-      {/* Staff Login Box */}
-      <div className="container">
-        <div className="row justify-content-center align-items-center" style={{ minHeight: '100vh' }}>
-          <div className="col-md-8 col-lg-6">
-            <div
-              className="card"
-              style={{
-                background: 'linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.3))',
-                borderRadius: '10px',
-                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
-              }}
-            >
-              <div className="card-body">
-                <h2 className="card-title mb-4" style={{ color: 'white', textAlign: 'center' }}>
-                  Staff Login
-                </h2>
-                <div className="mb-3">
-                  <label htmlFor="username" className="form-label" style={{ color: 'white' }}>
-                    Username
-                  </label>
-                  <input
+      <Container className="d-flex align-items-center justify-content-center min-vh-100">
+        <Row className="justify-content-center w-100">
+          <Col md={6} lg={4}>
+            <div className="staff-card">
+              <div className="m-tech-line"></div>
+              
+              <div className="card-header-staff text-center">
+                <div className="admin-icon mb-3">
+                    <i className="fas fa-user-shield"></i>
+                </div>
+                <h2 className="italic-brand text-white">STAFF <span className="text-blue">PORTAL</span></h2>
+                <p className="terminal-text">ADMINISTRATIVE TERMINAL v2.0.6</p>
+              </div>
+
+              <Form onSubmit={handleLogin} className="mt-4">
+                <Form.Group className="mb-4" controlId="username">
+                  <Form.Label className="staff-label">COMMANDER ID</Form.Label>
+                  <Form.Control
                     type="text"
-                    className="form-control"
-                    id="username"
-                    placeholder="Enter your username"
+                    className="staff-input"
+                    placeholder="Username"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
+                    required
                   />
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="password" className="form-label" style={{ color: 'white' }}>
-                    Password
-                  </label>
-                  <input
+                </Form.Group>
+
+                <Form.Group className="mb-4" controlId="password">
+                  <Form.Label className="staff-label">SECURITY KEY</Form.Label>
+                  <Form.Control
                     type="password"
-                    className="form-control"
-                    id="password"
-                    placeholder="Enter your password"
+                    className="staff-input"
+                    placeholder="••••••••"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
+                    required
                   />
-                </div>
-                {error && <div className="text-danger mb-3">{error}</div>}
-                <button
-                  type="button"
-                  className="btn btn-primary"
-                  style={{
-                    fontSize: '12px', // Smaller font size
-                    padding: '6px 30px',
-                    marginLeft: '250px' 
-                  }}
-                  onClick={handleLogin}
-                >
-                  Login
-                </button>
+                </Form.Group>
+
+                {error && (
+                  <div className="error-terminal mb-4">
+                    <i className="fas fa-exclamation-triangle me-2"></i> {error}
+                  </div>
+                )}
+
+                <Button type="submit" className="btn-staff-login w-100">
+                  AUTHORIZE ACCESS
+                </Button>
+              </Form>
+              
+              <div className="text-center mt-4">
+                <small className="text-muted-staff">Secure Encrypted Session</small>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 };
