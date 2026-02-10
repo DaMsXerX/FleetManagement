@@ -1,136 +1,138 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono&display=swap');
-
+/* General Wrapper */
 .staff-wrapper {
     position: relative;
-    min-height: 100vh;
+    height: 100vh;
+    width: 100vw;
     overflow: hidden;
-    font-family: 'Inter', sans-serif;
-    display: flex;
-    align-items: center;
+    color: #fff;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* Background Layers */
+/* Background Image Fix */
 .staff-bg-img {
     position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    object-fit: cover;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
     z-index: -2;
-    filter: brightness(0.4) grayscale(0.5);
+    transform: scale(1.05); /* Soft zoom for depth */
 }
 
 .staff-bg-overlay {
     position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: radial-gradient(circle, transparent 20%, #000 100%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.9) 100%);
+    backdrop-filter: blur(4px);
     z-index: -1;
 }
 
-/* The Card */
+/* The Card - Glassmorphism */
 .staff-card {
-    background: rgba(15, 15, 15, 0.9);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 40px;
+    background: rgba(20, 20, 25, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2.5rem;
+    border-radius: 4px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
     position: relative;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.8);
 }
 
 .m-tech-line {
     position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 4px;
-    background: linear-gradient(90deg, #0078ad 33%, #002c5f 33% 66%, #e10600 66%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #007bff, #00d4ff);
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.7);
 }
 
-/* Typography */
-.italic-brand {
+/* Header & Typography */
+.brand-title {
+    font-weight: 800;
+    letter-spacing: 4px;
     font-style: italic;
-    font-weight: 900;
-    letter-spacing: -1px;
+    margin-bottom: 0.2rem;
 }
 
-.text-blue { color: #2583fd; }
+.text-blue { color: #00d4ff; }
 
-.terminal-text {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    color: #2583fd;
-    letter-spacing: 2px;
-    margin-top: 5px;
-}
-
-.admin-icon {
-    font-size: 30px;
-    color: white;
+.terminal-badge {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.7rem;
+    color: #00d4ff;
+    letter-spacing: 1px;
     opacity: 0.8;
 }
 
-/* Form Styling */
+/* Form Styles */
 .staff-label {
-    font-size: 10px;
-    font-weight: 800;
-    color: rgba(255,255,255,0.5);
+    font-size: 0.75rem;
     letter-spacing: 2px;
+    font-weight: bold;
+    color: #aaa;
     margin-bottom: 8px;
 }
 
+.staff-input-group {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.input-icon {
+    background: transparent !important;
+    border: none !important;
+    color: #00d4ff !important;
+}
+
 .staff-input {
-    background: rgba(255, 255, 255, 0.03) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    border-radius: 0 !important;
+    background: transparent !important;
+    border: none !important;
     color: white !important;
-    padding: 12px !important;
-    font-family: 'JetBrains Mono', monospace;
+    padding: 12px;
 }
 
 .staff-input:focus {
-    background: rgba(255, 255, 255, 0.07) !important;
-    border-color: #e10600 !important; /* Performance Red Focus */
     box-shadow: none !important;
-}
-
-/* Error Message */
-.error-terminal {
-    background: rgba(225, 6, 0, 0.1);
-    border-left: 3px solid #e10600;
-    color: #ff4d4d;
-    padding: 10px;
-    font-size: 11px;
-    font-family: 'JetBrains Mono', monospace;
+    color: white !important;
 }
 
 /* Button */
 .btn-staff-login {
-    background: white !important;
-    color: black !important;
-    border: none !important;
-    border-radius: 0 !important;
-    padding: 14px !important;
-    font-weight: 900 !important;
-    font-size: 13px !important;
-    letter-spacing: 2px !important;
-    transition: 0.3s !important;
+    background: transparent;
+    border: 1px solid #00d4ff;
+    color: #00d4ff;
+    padding: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    border-radius: 2px;
 }
 
 .btn-staff-login:hover {
-    background: #e10600 !important;
-    color: white !important;
-    transform: translateY(-2px);
+    background: #00d4ff;
+    color: #000;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
 }
 
-.text-muted-staff {
-    color: rgba(255,255,255,0.2);
-    font-size: 9px;
-    text-transform: uppercase;
+/* Error Message */
+.error-terminal {
+    background: rgba(255, 0, 0, 0.1);
+    border-left: 3px solid #ff4d4d;
+    color: #ff4d4d;
+    padding: 10px;
+    font-size: 0.8rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.encryption-tag {
+    font-size: 0.65rem;
+    color: #555;
     letter-spacing: 1px;
-}
-
-/* Mobile Fixes */
-@media (max-width: 576px) {
-    .staff-card {
-        padding: 30px 20px;
-        margin: 0 15px;
-    }
 }
