@@ -1,29 +1,3 @@
-/* @keyframes carMove {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-.car-animation {
-  position: absolute;
-  bottom: 100px;
-  top: 100px;
-  left: 0;
-  width: 1900px;
-  height: 800px;
-  background: url('../public/car.jpeg') no-repeat center center;
-  background-size: contain;
-  animation: carMove 1s linear forwards;
-  animation-iteration-count: 1;
-}
-
-  
-  
-  
-   */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
 
 :root {
