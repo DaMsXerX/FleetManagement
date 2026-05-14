@@ -129,3 +129,4 @@ function AboutUs() {
 }
 
 export default AboutUs;
+// more features will be added soon
