@@ -171,4 +171,3 @@ const BookingForm = () => {
 };
 
 export default BookingForm;
-// optimizations soon
