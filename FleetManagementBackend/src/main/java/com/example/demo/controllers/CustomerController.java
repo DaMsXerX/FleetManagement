@@ -55,3 +55,4 @@ public class CustomerController {
 		return c_manager.login(email, password);
 	}
 }
+// new updates soon
