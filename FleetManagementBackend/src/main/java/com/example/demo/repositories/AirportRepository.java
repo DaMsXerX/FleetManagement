@@ -13,3 +13,4 @@ public interface AirportRepository extends JpaRepository<Airport, Integer>
 	@Query(value = "select DISTINCT(airport_Code) from Airport", nativeQuery = true)
     public List<String> getAllAirportCodes();
 }
+// new updates soon
